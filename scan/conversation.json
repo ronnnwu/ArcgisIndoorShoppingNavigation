@@ -1,0 +1,54 @@
+{
+    "Conversation":[
+        {
+            "ID":1,
+            "Grocerai":"Hi Ron",
+            "User":"Let's get food."
+        },
+        {
+            "ID":2,
+            "Grocerai":"Fantastic! What would you like?",
+            "User":"Fruits."
+        },
+        {
+            "ID":3,
+            "Grocerai":"Bananas, strawberries, oranges?",
+            "User":"Let's go with bananas and grapes."
+        },
+        {
+            "ID":4,
+            "Grocerai":"Bananas and Grapes, copy.",
+            "User":"Cool!"
+        },
+        {
+            "ID":5,
+            "Grocerai":"Will that be all?",
+            "User":"I'll go with a garden salad."
+        },
+        {
+            "ID":6,
+            "Grocerai":"Should I add tomatoes, lettuce,  bell pepper, radish?",
+            "User":"Remove radish."
+        },
+        {
+            "ID":7,
+            "Grocerai":"Tomatoes, lettuce,  bell pepper, copy.",
+            "User":"Yes."
+        },
+        {
+            "ID":8,
+            "Grocerai":"What's next?",
+            "User":"That's all."
+        },
+        {
+            "ID":9,
+            "Grocerai":"Can I interest you in some bacon?",
+            "User":"Yes!"
+        }, 
+        {
+            "ID":10,
+            "Grocerai":"Excellent choice.",
+            "User":"Done shopping."
+        }
+    ]
+}

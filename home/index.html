@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Store</title>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="css/foundation.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> 
+  <link rel="stylesheet" href="css/style.css"> 
+
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'> 
+  <link rel="stylesheet" href="css/style_chat.css"> 
+
+</head>
+
+<header>
+  <nav>
+  <div class="container">
+    <ul class="navbar-left">
+    <li><a href="../index.html"> Ron</a>,  </li>
+      <li ><a href="../store/index.html">Store Assistant</a></li>
+      <li ><a href="../scan/index.html">Scan Items</a></li>
+      <li class="highlight-store"><a href="#">Smart Home</a></li>
+    </ul> <!--end navbar-left -->
+
+    
+  </div> <!--end container -->
+</nav>
+   
+</header>
+
+<body>     
+
+
+<div class="row">
+
+  <div class="large-6 columns" style="border-right: 1px dashed grey; ">
+  
+    <div class="chatbox-holder">
+    <div class="chatbox">
+      <div class="chatbox-top">
+        <div class="chatbox-avatar">
+          <img src="img/ron_p.jpg" />
+        </div>
+        <div class="chat-partner-name">
+          <span class="status online"></span>
+          Ron
+        </div>
+        <div class="chatbox-icons">
+          <a href="javascript:void(0);"><i class="fa fa-minus"></i></a>
+          <a href="javascript:void(0);"><i class="fa fa-close"></i></a>       
+        </div>      
+      </div>
+      
+      <div class="chat-messages">
+
+ 
+
+      </div>
+
+        
+
+      <div class="chat-input-holder">
+        <br>
+        <textarea class="chat-input" ></textarea>
+        <input type="submit" onclick="click_send_bn()"  value="Send" class="message-send" />
+
+      </div>
+      <div class="attachment-panel"> 
+      </div>
+    </div>
+ 
+    </div>
+  </div>
+
+ 
+  <div class="large-6 columns" > 
+
+
+      <br>
+      <br>
+    <div class="hidd_chat">  
+     <div class="row">
+       
+        <div class="small-9 columns">
+          <h1>To Fridge and Closets: </h1>
+          <br><br>
+        </div> 
+         
+     </div>   
+
+    <div class="row"> 
+        <br>
+
+
+        <h2>Shopping Cart</h2>
+        <br>
+        
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="bacon.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+        </div>
+
+    </div>
+    <div class="row"> 
+    <br>
+    <br>
+        <h2>Home Fridge</h2>
+        
+        
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+     </div>
+  
+  </div>  
+  </div>
+
+</div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script> 
+    <script src="js/index_chat.js"></script>
+
+</body>
+</html>

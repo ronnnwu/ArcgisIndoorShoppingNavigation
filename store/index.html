@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Store</title>
+  
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="css/foundation.css">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> 
+  <link rel="stylesheet" href="css/style.css"> 
+
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'> 
+  <link rel="stylesheet" href="css/style_chat.css"> 
+
+</head>
+
+<header>
+  <nav>
+  <div class="container">
+    <ul class="navbar-left">
+    <li><a href="../index.html"> Ron</a>,  </li>
+      <li class="highlight-store"><a href="#" class="highlight-white">Store Assistant</a></li>
+      <li><a href="../scan/index.html">Scan Items</a></li>
+      <li><a href="../home/index.html">Smart Home</a></li>
+    </ul> <!--end navbar-left -->
+
+    <ul class="navbar-right">
+      <li><a href="#" id="cart"><i class="fa fa-shopping-cart"></i> Cart <span class="badge">0</span></a></li>
+    </ul> <!--end navbar-right -->
+  </div> <!--end container -->
+</nav>
+
+
+<div class="container">
+  <div class="shopping-cart">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">1</span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text">$1.97</span>
+      </div>
+    </div> <!--end shopping-cart-header -->
+
+    <ul class="shopping-cart-items">
+      <li class="clearfix">
+        <img src="bacon.jpg" alt="item1" height="42" width="62" />
+        <span class="item-name">Kirkland Signature Regular Sliced Bacon</span>
+        <span class="item-price">$1.97</span>
+        <span class="item-quantity">Quantity: 01</span>
+      </li>
+ 
+    </ul>
+
+    <a href="#" class="button">Checkout</a>
+  </div> <!--end shopping-cart -->
+</div> <!--end container -->
+</header>
+
+<body>  
+ <audio id="buzzer0" src="voice/Q0.wav" type="audio/wav"></audio>  
+ <audio id="buzzer1" src="voice/Q1.wav" type="audio/wav"></audio>    
+ <audio id="buzzer2" src="voice/Q2.wav" type="audio/wav"></audio>  
+ <audio id="buzzer3" src="voice/Q3.wav" type="audio/wav"></audio>  
+ <audio id="buzzer4" src="voice/Q4.wav" type="audio/wav"></audio>  
+ <audio id="buzzer5" src="voice/Q5.wav" type="audio/wav"></audio>  
+ <audio id="buzzer6" src="voice/Q6.wav" type="audio/wav"></audio>  
+ <audio id="buzzer7" src="voice/Q7.wav" type="audio/wav"></audio>  
+ <audio id="buzzer8" src="voice/Q8.wav" type="audio/wav"></audio>   
+ <audio id="buzzer9" src="voice/Q9.wav" type="audio/wav"></audio>    
+
+
+<div class="row">
+
+  <div class="large-6 columns" style="border-right: 1px dashed grey; ">
+  
+    <div class="chatbox-holder">
+    <div class="chatbox">
+      <div class="chatbox-top">
+        <div class="chatbox-avatar">
+          <img src="img/ron_p.jpg" />
+        </div>
+        <div class="chat-partner-name">
+          <span class="status online"></span>
+          Ron
+        </div>
+        <div class="chatbox-icons">
+          <a href="javascript:void(0);"><i class="fa fa-minus"></i></a>
+          <a href="javascript:void(0);"><i class="fa fa-close"></i></a>       
+        </div>      
+      </div>
+      
+      <div class="chat-messages">
+
+
+        <div class="message-box-holder add_stuff_ch_AI">
+          <div class="message-sender">
+             Pier 36 PA
+           </div>
+          <div class="message-box message-partner">
+            I'm Pier 36 Store personal assistant.
+          </div>
+          <br>
+          <div class="message-box message-partner">
+            What can I do for you, Ron?
+          </div>
+        </div>
+            
+
+      </div>
+
+        
+
+      <div class="chat-input-holder">
+        <br>
+        <textarea class="chat-input" ></textarea>
+        <input type="submit" onclick="click_send_bn()"  value="Send" class="message-send" />
+
+      </div>
+      <div class="attachment-panel"> 
+      </div>
+    </div>
+ 
+    </div>
+  </div>
+
+ 
+  <div class="large-6 columns" > 
+
+
+      <br>
+      <br>
+    <div class="hidd_chat">  
+     <div class="row">
+       
+        <div class="small-9 columns">
+        <h1>Shopping List:</h1>
+        </div> 
+         
+     </div>
+
+     <div class="add_row_later">
+       <br>
+
+     </div>
+       
+
+     
+
+    </div>  
+  </div>
+
+</div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index.js"></script> 
+    <script src="js/index_chat.js"></script>
+
+</body>
+</html>

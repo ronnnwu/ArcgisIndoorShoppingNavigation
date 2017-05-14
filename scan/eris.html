@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Load a basic web scene - 4.3</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.3/"></script>
+
+  <script>
+    require([
+      "esri/views/SceneView",
+      "esri/WebScene",
+        "esri/layers/GraphicsLayer",
+
+        "esri/Graphic",
+        "esri/geometry/Point",
+        "esri/geometry/Polyline",
+        "esri/geometry/Polygon",
+
+        "esri/symbols/SimpleMarkerSymbol",
+        "esri/symbols/SimpleLineSymbol",
+        "esri/symbols/SimpleFillSymbol",
+
+        "esri/symbols/WebStyleSymbol",
+      "dojo/dom",
+      "dojo/domReady!"
+    ], function(
+      SceneView, WebScene, 
+      GraphicsLayer,
+        Graphic, Point, Polyline, Polygon,
+        SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, WebStyleSymbol,
+        dom
+    ) {
+
+      var titleDiv = dom.byId("titleDiv");
+
+      /************************************************************
+       * Creates a new WebScene instance. A WebScene must reference
+       * a PortalItem ID that represents a WebScene saved to
+       * arcgis.com or an on-premise portal.
+       *
+       * To load a WebScene from an on-premise portal, set the portal
+       * url in esriConfig.portalUrl.
+       ************************************************************/
+      var scene = new WebScene({
+        portalItem: { // autocasts as new PortalItem()
+          id: "292c2f19ab654d688c9ce6cf4bc2d447"
+        }
+      });
+
+      /************************************************************
+       * Set the WebScene instance to the map property in a SceneView.
+       ************************************************************/
+      var view = new SceneView({
+        map: scene,
+        container: "viewDiv",
+        padding: {
+          top: 40
+        }
+      });
+
+      view.then(function() {
+        // when the scene and view resolve, display the scene's
+        // title in the DOM
+        var title = scene.portalItem.title;
+        titleDiv.innerHTML = title;
+      });
+      
+              /*********************
+         * Add graphics layer
+         *********************/
+
+        var graphicsLayer = new GraphicsLayer();
+        scene.add(graphicsLayer);
+
+        /*************************
+         * Add a 3D point graphic
+         *************************/
+
+        // London
+          markerSymbol = new SimpleMarkerSymbol({
+            color: [226, 119, 40],
+
+            outline: { // autocasts as new SimpleLineSymbol()
+              color: [255, 255, 255],
+              width: 2
+            }
+          });
+          
+        var pointGraphic;
+        
+        function addPoint(x,y) {
+        var point = new Point({
+            x: x,
+            y: y
+          });
+
+        //graphicsLayer.remove(pointGraphic);
+        pointGraphic = new Graphic({
+          geometry: point,
+          symbol: markerSymbol
+        });
+
+        graphicsLayer.add(pointGraphic);
+        }
+        
+        // -8236099.103545825, 4969602.200684823
+        // -0.178,51.48791
+        // -73.98613706238304, 40.709603865398066 
+        var initX = -73.98463706238304;
+        var initY = 40.710030065398066;
+        
+        addPoint(initX, initY);
+        var step = 0;
+        var xOff = 0.0001;
+        
+        window.setInterval(function () {
+          step =step + 1;
+          if (step < 3){
+            initY = initY - xOff; 
+          }    
+          else if (  step <15    )
+          {            
+            initX = initX - xOff; 
+          } 
+          else if (  step <18){
+            initX = initX - xOff; 
+          }
+          else if (  step <20){
+            initY = initY - xOff; 
+          }  
+          else if (  step <36){
+            initX = initX - xOff; 
+          }   
+          addPoint(initX, initY);
+        }, 500 );
+
+      
+    });
+  </script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+    
+    #titleDiv {
+      background-color: lightgray;
+      color: black;
+      padding: 5px;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      font-size: 20pt;
+      font-weight: bolder;
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      opacity: 0.75;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="viewDiv">
+  </div>
+</body>
+
+</html>
